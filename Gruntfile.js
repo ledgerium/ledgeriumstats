@@ -70,11 +70,11 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		clean: {
 			build: ['dist'],
-			cleanup_js: ['dist/js/*.*', '!dist/js/netstats.*'],
-			cleanup_css: ['dist/css/*.css', '!dist/css/netstats.*.css'],
+			cleanup_js: ['dist/js/*.*', '!dist/js/ledgeriumstats.*'],
+			cleanup_css: ['dist/css/*.css', '!dist/css/ledgeriumstats.*.css'],
 			build_lite: ['dist-lite'],
-			cleanup_js_lite: ['dist-lite/js/*.*', '!dist-lite/js/netstats.*'],
-			cleanup_css_lite: ['dist-lite/css/*.css', '!dist-lite/css/netstats.*.css']
+			cleanup_js_lite: ['dist-lite/js/*.*', '!dist-lite/js/ledgeriumstats.*'],
+			cleanup_css_lite: ['dist-lite/css/*.css', '!dist-lite/css/ledgeriumstats.*.css']
 		},
 		jade: {
 			build: {
@@ -199,19 +199,19 @@ module.exports = function(grunt) {
 				src: scripts,
 				dest: 'dist/js/app.js'
 			},
-			netstats: {
+			ledgeriumstats: {
 				options: {
 					sourceMap: false,
 					sourceMapIncludeSources: true,
 					sourceMapIn: ['dist/js/vendor.min.js.map', 'dist/js/app.min.js.map']
 				},
 				src: ['<%= concat.vendor.dest %>', '<%= uglify.app.dest %>'],
-				dest: 'dist/js/netstats.min.js',
+				dest: 'dist/js/ledgeriumstats.min.js',
 				nonull: true
 			},
 			css: {
 				src: ['dist/css/*.min.css', 'dist/css/*.css'],
-				dest: 'dist/css/netstats.min.css'
+				dest: 'dist/css/ledgeriumstats.min.css'
 			},
 			vendor_lite: {
 				options: {
@@ -229,19 +229,19 @@ module.exports = function(grunt) {
 				src: scripts_lite,
 				dest: 'dist-lite/js/app.js'
 			},
-			netstats_lite: {
+			ledgeriumstats_lite: {
 				options: {
 					sourceMap: false,
 					sourceMapIncludeSources: true,
 					sourceMapIn: ['dist-lite/js/vendor.min.js.map', 'dist-lite/js/app.min.js.map']
 				},
 				src: ['<%= concat.vendor_lite.dest %>', '<%= uglify.app_lite.dest %>'],
-				dest: 'dist-lite/js/netstats.min.js',
+				dest: 'dist-lite/js/ledgeriumstats.min.js',
 				nonull: true,
 			},
 			css_lite: {
 				src: ['dist-lite/css/*.min.css', 'dist-lite/css/*.css'],
-				dest: 'dist-lite/css/netstats.min.css'
+				dest: 'dist-lite/css/ledgeriumstats.min.css'
 			}
 		},
 		uglify: {
@@ -273,8 +273,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.registerTask('default', ['clean:build', 'clean:cleanup_js', 'clean:cleanup_css', 'jade:build', 'copy:build', 'cssmin:build', 'concat:vendor', 'concat:scripts', 'uglify:app', 'concat:netstats', 'concat:css', 'clean:cleanup_js', 'clean:cleanup_css']);
-	grunt.registerTask('lite', ['clean:build_lite', 'clean:cleanup_js_lite', 'clean:cleanup_css_lite', 'jade:build_lite', 'copy:build_lite', 'cssmin:build_lite', 'concat:vendor_lite', 'concat:scripts_lite', 'uglify:app_lite', 'concat:netstats_lite', 'concat:css_lite', 'clean:cleanup_js_lite', 'clean:cleanup_css_lite']);
+	grunt.registerTask('default', ['clean:build', 'clean:cleanup_js', 'clean:cleanup_css', 'jade:build', 'copy:build', 'cssmin:build', 'concat:vendor', 'concat:scripts', 'uglify:app', 'concat:ledgeriumstats', 'concat:css', 'clean:cleanup_js', 'clean:cleanup_css']);
+	grunt.registerTask('lite', ['clean:build_lite', 'clean:cleanup_js_lite', 'clean:cleanup_css_lite', 'jade:build_lite', 'copy:build_lite', 'cssmin:build_lite', 'concat:vendor_lite', 'concat:scripts_lite', 'uglify:app_lite', 'concat:ledgeriumstats_lite', 'concat:css_lite', 'clean:cleanup_js_lite', 'clean:cleanup_css_lite']);
 	grunt.registerTask('build',   'default');
 	grunt.registerTask('all',   ['default', 'lite']);
 };

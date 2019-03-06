@@ -1,7 +1,7 @@
 {
   "name": "ledgeriumstats",
   "description": "Ledgerium Blockchain Network Dashboard",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": "0.12.0",

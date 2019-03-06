@@ -1,3 +1,4 @@
 #!/usr/bin/env node
-var debug = require('debug')('eth-netstats');
+var debug = require('debug')('ledgeriumstats');
 var app = require('../app');
+

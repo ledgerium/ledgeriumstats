@@ -2,6 +2,7 @@ var _ = require('lodash');
 var logger = require('./lib/utils/logger');
 var chalk = require('chalk');
 var http = require('http');
+var debug = require('debug')('ledgeriumstats');
 
 // Init WS SECRET
 var WS_SECRET;
@@ -408,6 +409,7 @@ var nodeCleanupTimeout = setInterval( function ()
 
 }, 1000*60*60);
 
+debug("listening to port " + process.env.PORT || 3000);
 server.listen(process.env.PORT || 3000);
 
 module.exports = server;
