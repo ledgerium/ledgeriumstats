@@ -1,7 +1,7 @@
-Ethereum Network Stats
+Ledgerium Blockchain Network Stats
 ============
 
-This is a visual interface for ledgerium blockchain network real time status.
+This is a visual interface for Ledgerium Blockchain Network real time status.
 
 ![Screenshot](ledgeriumstats_screenshot.png)
 
@@ -21,7 +21,7 @@ npm install
 sudo npm install -g grunt-cli
 ```
 
-##Build the resources
+## Build the resources
 NetStats features two versions: the full version and the lite version. In order to build the static files you have to run grunt tasks which will generate dist or dist-lite directories containing the js and css files, fonts and images.
 
 
@@ -40,10 +40,16 @@ If you want to build both versions run
 grunt all
 ```
 
-##Run
+## Run
 
 ```bash
 npm start
 ```
+## Docker Image
 
-see the interface at http://tesnet.ledgerium.net:3000
+The built image is available at 
+```
+https://hub.docker.com/r/ledgeriumengineering/ledgeriumstats
+```
+
+see the interface at http://testnet.ledgerium.net:3000
